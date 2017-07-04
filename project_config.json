@@ -119,5 +119,16 @@
                 "java": "Java"
             }
         ]
+    },
+    "test63": {
+        "api_name": "api",
+        "common_request_headers": "false",
+        "common_response_headers": "false",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
     }
 }
