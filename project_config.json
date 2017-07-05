@@ -218,16 +218,5 @@
                 "java": "Java"
             }
         ]
-    },
-    "test14": {
-        "api_name": "test14",
-        "common_request_headers": "false",
-        "common_response_headers": "false",
-        "authentication_banner": "false",
-        "languages_supported": [
-            {
-                "java": "Java"
-            }
-        ]
     }
 }
