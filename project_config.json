@@ -58,7 +58,7 @@
         "api_name": "api",
         "common_request_headers": "true",
         "common_response_headers": "true",
-        "authentication_banner": "false",
+        "authentication_banner": "true",
         "languages_supported": [
             {
                 "java": "Java"
