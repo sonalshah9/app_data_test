@@ -47,10 +47,16 @@
         "api_name": "api",
         "common_request_headers": "false",
         "common_response_headers": "true",
-        "authentication_banner": "false",
+        "authentication_banner": "true",
         "languages_supported": [
             {
                 "java": "Java"
+            },
+            {
+                "php": "PHP"
+            },
+            {
+                "javascript": "Javascript"
             }
         ]
     },
