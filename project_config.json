@@ -7,6 +7,12 @@
         "languages_supported": [
             {
                 "java": "Java"
+            },
+            {
+                "python": "Python"
+            },
+            {
+                "shell": "Shell"
             }
         ]
     },
