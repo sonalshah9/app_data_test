@@ -2,42 +2,12 @@
     "project": "Orbipay Checkout",
     "Topics": [
         {
-            "title": "Introduction",
-            "content": "Hello this is content for Introduction topic of Orbipay-Checkout",
-            "subTopics": [
-                {
-                    "title": "Introduction",
-                    "content": "<p>Hello this is content for sub topic of Introduction topic of Orbipay-Checkout</p>\r\n",
-                    "subTopics": [
-                        {
-                            "title": "Introduction Sub Topic1 Sub Topic1",
-                            "content": "Hello this is content for sub topic of sub topic of Introduction topic of Orbipay-Checkout"
-                        },
-                        {
-                            "title": "Introduction Sub Topic1 Sub Topic2",
-                            "content": "Hello this is content for sub topic of sub topic of Introduction topic of Orbipay-Checkout"
-                        }
-                    ]
-                },
-                {
-                    "title": "Introduction Sub Topic2",
-                    "content": "Hello this is content for sub topic of Introduction topic of Orbipay-Checkout",
-                    "subTopics": [
-                        {
-                            "title": "Introduction Sub Topic2 Sub Topic1",
-                            "content": "Hello this is content for sub topic of sub topic of Introduction topic of Orbipay-Checkout"
-                        },
-                        {
-                            "title": "Introduction Sub Topic2 Sub Topic2",
-                            "content": "Hello this is content for sub topic of sub topic of Introduction topic of Orbipay-Checkout"
-                        }
-                    ]
-                }
-            ]
+            "title": "Overview",
+            "content": "<p>Orbipay Checkout&copy; is a payment platform that merchants can use in order to accept payments from their customers who place orders on their websites. The payments can be accepted on a one-time basis from credit cards, debit cards or bank accounts.</p>\r\n"
         },
         {
-            "title": "Introduction2",
-            "content": "Hello this is content for Introduction2 topic of Orbipay-Checkout",
+            "title": "Design Documents",
+            "content": "<p>The main objective is to present one of the integration approach where the customer stays on merchant website during the entire purchase process (i.e., does not get redirected to Orbipay&rsquo;s site etc). All the work of payment capture process is done by Orbipay Checkout&copy; behind-the-scenes. This approach to enable a merchant to accept payments is achieved through&nbsp;<strong>tokenization</strong>.<img alt=\"\" src=\"https://bapps.alacriti.com/confluence/download/attachments/44140803/Checkout_E2E_Design.png?version=1&amp;modificationDate=1493322400000&amp;api=v2\" style=\"height:471px; width:900px\" /></p>\r\n",
             "subTopics": [
                 {
                     "title": "Introduction2 Sub Topic",
