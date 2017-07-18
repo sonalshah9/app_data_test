@@ -1,24 +1,4 @@
 {
-    "test6": {
-        "api_name": "api",
-        "common_request_headers": "true",
-        "common_response_headers": "true",
-        "authentication_banner": "false",
-        "languages_supported": [
-            {
-                "java": "Java"
-            },
-            {
-                "python": "Python"
-            },
-            {
-                "php": "PHP"
-            },
-            {
-                "javascript": "Javascript"
-            }
-        ]
-    },
     "test7": {
         "api_name": "api",
         "common_request_headers": "false",
