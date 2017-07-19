@@ -20,5 +20,16 @@
                 "java": "Java"
             }
         ]
+    },
+    "Sai": {
+        "api_name": "Sai",
+        "common_request_headers": "false",
+        "common_response_headers": "false",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
     }
 }
