@@ -3,7 +3,7 @@
     "Topics": [
         {
             "title": "title",
-            "content": "<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>"
+            "content": "<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>"
         }
     ],
     "apiReference": "https://www.google.co.in/"
