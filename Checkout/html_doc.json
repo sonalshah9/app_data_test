@@ -69,10 +69,6 @@
         {
             "title": "Environments",
             "content": "<table class=\"confluenceTable tablesorter tablesorter-default\" border=\"1\">\r\n<thead>\r\n<tr class=\"tablesorter-headerRow\">\r\n<th class=\"confluenceTh sortableHeader tablesorter-headerAsc\" tabindex=\"0\" colspan=\"1\" data-column=\"0\">\r\n<div class=\"tablesorter-header-inner\"> </div>\r\n</th>\r\n<th class=\"confluenceTh sortableHeader\" tabindex=\"0\" data-column=\"1\">\r\n<div class=\"tablesorter-header-inner\">DevItg</div>\r\n</th>\r\n<th class=\"confluenceTh sortableHeader\" tabindex=\"0\" data-column=\"2\">\r\n<div class=\"tablesorter-header-inner\">QA</div>\r\n</th>\r\n<th class=\"confluenceTh sortableHeader\" tabindex=\"0\" data-column=\"3\">\r\n<div class=\"tablesorter-header-inner\">Sandbox</div>\r\n</th>\r\n<th class=\"confluenceTh sortableHeader\" tabindex=\"0\" data-column=\"4\">\r\n<div class=\"tablesorter-header-inner\">Prod</div>\r\n</th>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"confluenceTd\" colspan=\"1\">Checkout App (CO) Server</td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n</tr>\r\n<tr>\r\n<td class=\"confluenceTd\" colspan=\"1\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n</tr>\r\n<tr>\r\n<td class=\"confluenceTd\" colspan=\"1\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n<td class=\"confluenceTd\"> </td>\r\n</tr>\r\n</tbody>\r\n</table>"
-        },
-        {
-            "title": "hello",
-            "content": "<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>"
         }
     ],
     "apiReference": "https://developers.orbipay.com/"
