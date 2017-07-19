@@ -3,7 +3,7 @@
     "Topics": [
         {
             "title": "title",
-            "content": "<pre class=\"language-javascript\"><code>var i  =9 ;</code></pre>"
+            "content": "<ul class=\"nav nav-tabs\">\r\n<li class=\"active\"><a href=\"#Javascript\" data-toggle=\"tab\">Javascript</a></li>\r\n<li><a href=\"#HTML\" data-toggle=\"tab\">HTML</a></li>\r\n<li><a href=\"#CSS\" data-toggle=\"tab\">CSS</a></li>\r\n</ul>\r\n<div class=\"tab-content\">\r\n<div id=\"Javascript\" class=\"tab-pane fade in active\"><!-- <h3>HOME</h3> -->\r\n<p>Some content.</p>\r\n</div>\r\n<div id=\"HTML\" class=\"tab-pane fade\"><!-- <h3>HTML</h3> -->\r\n<p>Some content in menu 1.</p>\r\n</div>\r\n<div id=\"CSS\" class=\"tab-pane fade\"><!-- <h3>CSS</h3> -->\r\n<p>Some content in menu 2.</p>\r\n</div>\r\n</div>"
         }
     ],
     "apiReference": "https://www.google.co.in/"
