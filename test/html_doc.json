@@ -3,7 +3,7 @@
     "Topics": [
         {
             "title": "title",
-            "content": "<pre class=\"language-javascript\"><code>var i = 0 ;</code></pre>"
+            "content": "<pre class=\"language-javascript\"><code>var i  =9 ;</code></pre>"
         }
     ],
     "apiReference": "https://www.google.co.in/"
