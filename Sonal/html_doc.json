@@ -4,6 +4,10 @@
         {
             "title": "title",
             "content": "<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>"
+        },
+        {
+            "title": "ASIR",
+            "content": "<p>&lt;button id = \"checkout-button\"&gt;Pay&lt;/button&gt;</p>"
         }
     ],
     "apiReference": "https://www.google.co.in/"
