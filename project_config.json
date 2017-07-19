@@ -34,16 +34,5 @@
                 "python": "Python"
             }
         ]
-    },
-    "Bank": {
-        "api_name": "sdrf",
-        "common_request_headers": "false",
-        "common_response_headers": "false",
-        "authentication_banner": "false",
-        "languages_supported": [
-            {
-                "python": "Python"
-            }
-        ]
     }
 }
