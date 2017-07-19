@@ -7,7 +7,7 @@
             "subTopics": [
                 {
                     "title": "Introduction",
-                    "content": "<p>&lt;script id = \"checkout-script\"<br />&nbsp; &nbsp; &nbsp;src&nbsp;= \"<a class=\"external-link\" href=\"https://www.orbipay.com/js/checkoutofsc.js\" rel=\"nofollow\">https://www.orbipay.com/js/checkoutofsc.js</a>\"<br />&nbsp; &nbsp; &nbsp;data-key&nbsp;= \"cli_avmg585852kw555p\"\"<br />&nbsp; &nbsp; &nbsp;data-clienturl&nbsp;= \"/onlineshopping/post-token\" <br />&nbsp; &nbsp; &nbsp;data-amount&nbsp;= \"56\"<br />&nbsp; &nbsp; &nbsp;data-iframe&nbsp;= \"true\"<br />&nbsp; &nbsp; &nbsp;data-chargerefno&nbsp;= \"ord_82bad47fe43e7b8586ff672e8e6\"<br />&nbsp; &nbsp; &nbsp;data-customer_id = \"cust_3e7b8586ff672e8\" &gt;<br />&lt;/script&gt;</p>"
+                    "content": "<p><script id = \"checkout-script\"<br />     src = \"<a class=\"external-link\" href=\"https://www.orbipay.com/js/checkoutofsc.js\" rel=\"nofollow\">https://www.orbipay.com/js/checkoutofsc.js</a>\"<br />     data-key = \"cli_avmg585852kw555p\"\"<br />     data-clienturl = \"/onlineshopping/post-token\" <br />     data-amount = \"56\"<br />     data-iframe = \"true\"<br />     data-chargerefno = \"ord_82bad47fe43e7b8586ff672e8e6\"<br />     data-customer_id = \"cust_3e7b8586ff672e8\" ><br /></script></p>"
                 }
             ]
         }
