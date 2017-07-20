@@ -53,5 +53,16 @@
                 "java": "Java"
             }
         ]
+    },
+    "Orbiapy": {
+        "api_name": "Orbipay REST API",
+        "common_request_headers": "true",
+        "common_response_headers": "true",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
     }
 }
