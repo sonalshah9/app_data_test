@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Orbipay REST APIs",
-        "description": "API specification to use the Orbipay REST APIs. This documentation covers the Customer Management and Payment Management related APIs.\n",
+        "title": "Orbipay Wallet APIs",
+        "description": "API specification to use the Orbipay Wallet APIs. This documentation covers the wallet related APIs.\n",
         "contact": {
             "name": "Orbipay Team",
             "email": "support@billerpayments.com"
@@ -16,11 +16,11 @@
     "tags": [
         {
             "name": "Customer",
-            "description": "This section outlines the APIs required to exchange and manage customer information, such as customer account details.\n"
+            "description": "This section outlines the APIs required to exchange and manage customer information, such as create customer.\n"
         },
         {
             "name": "Bank Account",
-            "description": "This section outlines the APIs required to enable customers to manage their funding accounts.\n"
+            "description": "This section outlines the APIs required to enable customers to manage their bank accounts.\n"
         },
         {
             "name": "Card",
@@ -28,19 +28,19 @@
         },
         {
             "name": "Transfer",
-            "description": "This section outlines the APIs required to manage Transfers.\n"
+            "description": "This section outlines the APIs required to transer money to other wallet users and non-wallet users as well.\n"
         },
         {
             "name": "CashIn",
-            "description": "This section outlines the APIs required to manage CashIn.\n"
+            "description": "This section outlines the APIs required to top up the wallet.\n"
         },
         {
             "name": "CashOut",
-            "description": "This section outlines the APIs required to manage Cashout.\n"
+            "description": "This section outlines the APIs required to Cashout to their bank accounts.\n"
         },
         {
             "name": "Transaction",
-            "description": "This section outlines the APIs required to manage Transaction.\n"
+            "description": "This section outlines the APIs required to get informations about the wallet transactions.\n"
         },
         {
             "name": "Wallet",
@@ -48,7 +48,7 @@
         }
     ],
     "host": "www.orbipay.com",
-    "basePath": "/connectapi/v1",
+    "basePath": "/walletapi/v1",
     "schemes": [
         "https"
     ],
@@ -65,7 +65,7 @@
                     "Customer"
                 ],
                 "summary": "Create Customer",
-                "description": "The Create Customer API is used to register a customer with Orbipay Wallet.",
+                "description": "The Create Customer API is used to register a customer with Orbipay  Wallet.",
                 "operationId": "createCustomer",
                 "parameters": [
                     {
@@ -88,7 +88,7 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                                 },
                                 "last_name": {
                                     "type": "string",
@@ -124,7 +124,7 @@
                                 "email": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                                 },
                                 "phone_number": {
                                     "description": "Home phone number of the customer",
@@ -226,7 +226,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Create Customer API is populated with the customer id issued by OrbiPay-Wallet for the customer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -242,7 +242,7 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                                 },
                                 "last_name": {
                                     "type": "string",
@@ -278,7 +278,7 @@
                                 "email": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                                 },
                                 "phone_number": {
                                     "description": "Home phone number of the customer",
@@ -426,7 +426,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -499,7 +499,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "PARTNER_ID",
@@ -524,7 +524,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Get Customer API is populated with the customer details as customer object.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -540,7 +540,7 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                                 },
                                 "last_name": {
                                     "type": "string",
@@ -576,7 +576,7 @@
                                 "email": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                                 },
                                 "phone_number": {
                                     "description": "Home phone number of the customer",
@@ -724,7 +724,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -784,7 +784,7 @@
                     "Customer"
                 ],
                 "summary": "Update Customer",
-                "description": "The Update Customer API is used to edit the customer's personal details or the customer's status. Only the information being updated needs to be sent in the request, along with the id of the customer being updated.",
+                "description": "The Update Customer API is used to edit the customer's personal informations or the customer's status. Only the information being updated needs to be populated in customer object sent in the request, along with the id of the customer being updated.",
                 "operationId": "updateCustomer",
                 "parameters": [
                     {
@@ -807,7 +807,7 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                                 },
                                 "last_name": {
                                     "type": "string",
@@ -843,7 +843,7 @@
                                 "email": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                                 },
                                 "phone_number": {
                                     "description": "Home phone number of the customer",
@@ -923,16 +923,6 @@
                         }
                     },
                     {
-                        "name": "ID_CUSTOMER",
-                        "in": "path",
-                        "required": true,
-                        "type": "string",
-                        "pattern": "[a-z0-9]{0,50}",
-                        "minLength": 0,
-                        "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
-                    },
-                    {
                         "name": "PARTNER_ID",
                         "in": "header",
                         "required": true,
@@ -951,11 +941,21 @@
                         "minLength": 0,
                         "maxLength": 64,
                         "description": "Signature key used for authentication  cli_example5852kw555"
+                    },
+                    {
+                        "name": "ID_CUSTOMER",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "[a-z0-9]{0,50}",
+                        "minLength": 0,
+                        "maxLength": 50,
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Update Customer API is populated with the updated customer details as customer object.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -971,7 +971,7 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                                 },
                                 "last_name": {
                                     "type": "string",
@@ -1007,7 +1007,7 @@
                                 "email": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                                 },
                                 "phone_number": {
                                     "description": "Home phone number of the customer",
@@ -1155,7 +1155,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -1217,7 +1217,7 @@
                     "Bank Account"
                 ],
                 "summary": "Add Bank Account",
-                "description": "This API is used to add a funding account for the customer. The funding account is available for servicing all the customer accounts the customer holds. An exhaustive set of account types are supported as funding accounts as indicated in the field account_subtype. ABA routing number is mandatory for bank accounts. Expiry date, address fields and Card CVV are required for card accounts.",
+                "description": "This API is used to add a bank account for the customer. The bank account is available for cashout. An exhaustive set of account types are supported as bank accounts as indicated in the field account_subtype. ABA routing number is mandatory for bank accounts. ",
                 "operationId": "addBankAccount",
                 "parameters": [
                     {
@@ -1228,12 +1228,12 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "body",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of Funding account to be added to customer.",
+                        "description": "This JSON contains all the attributes of bank account to be added to customer.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -1247,7 +1247,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -1276,7 +1276,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -1292,7 +1292,7 @@
                                         "checking",
                                         "money_market"
                                     ],
-                                    "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                    "description": "Account Sub Type indicates the sub type of a funding account.",
                                     "example": "savings"
                                 },
                                 "account_holder_name": {
@@ -1383,7 +1383,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to add Bank Account API is populated with the account id issued by OrbiPay-Wallet for the customer bank account.",
                         "schema": {
                             "type": "object",
                             "required": [
@@ -1396,7 +1396,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -1425,7 +1425,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -1441,7 +1441,7 @@
                                         "checking",
                                         "money_market"
                                     ],
-                                    "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                    "description": "Account Sub Type indicates the sub type of a funding account.",
                                     "example": "savings"
                                 },
                                 "account_holder_name": {
@@ -1578,7 +1578,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -1640,7 +1640,7 @@
                     "Card"
                 ],
                 "summary": "Add Card",
-                "description": "This API is used to add a funding account for the customer. The funding account is available for servicing all the customer accounts the customer holds. An exhaustive set of account types are supported as funding accounts as indicated in the field account_subtype. ABA routing number is mandatory for bank accounts. Expiry date, address fields and Card CVV are required for card accounts.",
+                "description": "This API is used to add a card of a customer. The card is available for servicing the customer for cashIn. An exhaustive set of account types are supported as as accounts as indicated in the field account_subtype. Expiry date, address fields and Card CVV are required for card accounts.",
                 "operationId": "addCard",
                 "parameters": [
                     {
@@ -1651,12 +1651,12 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "body",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of Funding account to be added to customer.",
+                        "description": "This JSON contains all the attributes of Card account to be added to customer.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -1670,7 +1670,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "card_number": {
@@ -1678,7 +1678,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -1805,7 +1805,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Add Card API is populated with the Identifiers issued by OrbiPay-Wallet for the Card Accounts.",
                         "schema": {
                             "type": "object",
                             "required": [
@@ -1818,7 +1818,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "card_number": {
@@ -1826,7 +1826,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -1999,7 +1999,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2067,7 +2067,7 @@
                     {
                         "name": "wallet",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of wallet to be created.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -2150,12 +2150,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Create wallet API is populated with the  Identifiers issued by OrbiPay-Wallet for the Wallet.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2278,7 +2278,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2340,7 +2340,7 @@
                     "Wallet"
                 ],
                 "summary": "Get Wallet",
-                "description": "The Get Customer API is used to retrieve the details of the wallet.",
+                "description": "The Get Wallet API is used to retrieve the details of the wallet.",
                 "operationId": "getWallet",
                 "parameters": [
                     {
@@ -2351,7 +2351,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the wallet issued by orbipay system."
+                        "description": "Id of the wallet instance issued by orbipay wallet."
                     },
                     {
                         "name": "PARTNER_ID",
@@ -2381,12 +2381,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Get Wallet API is populated with the          Identifiers issued by OrbiPay-Wallet for the Wallet.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2509,7 +2509,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2575,7 +2575,7 @@
                     {
                         "name": "wallet",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of wallet to be updated",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -2631,16 +2631,6 @@
                         }
                     },
                     {
-                        "name": "ID_WALLET",
-                        "in": "path",
-                        "required": true,
-                        "type": "string",
-                        "pattern": "[a-z0-9]{0,50}",
-                        "minLength": 0,
-                        "maxLength": 50,
-                        "description": "Id of the wallet issued by orbipay system."
-                    },
-                    {
                         "name": "PARTNER_ID",
                         "in": "header",
                         "required": true,
@@ -2668,12 +2658,22 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
+                    },
+                    {
+                        "name": "ID_WALLET",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "[a-z0-9]{0,50}",
+                        "minLength": 0,
+                        "maxLength": 50,
+                        "description": "Id of the wallet instance issued by orbipay wallet."
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to update wallet API is populated with the updated details of wallet for a customer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2796,7 +2796,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2858,7 +2858,7 @@
                     "Bank Account"
                 ],
                 "summary": "Retrieve Customer's Bank Accounts",
-                "description": "This API is used to retrieve a list of funding accounts associated with a customer. The number of funding accounts retrieved can be modified using the initial_records request parameter. The ID_CUSTOMER  is issued by OrbiPay Checkout system.",
+                "description": "This API is used to retrieve a list of bank accounts associated with a customer. The number of bank accounts retrieved can be modified using the initial_records request parameter. The ID_CUSTOMER  is issued by OrbiPay Wallet .",
                 "operationId": "Retrieve Funding Accounts",
                 "parameters": [
                     {
@@ -2869,7 +2869,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "initial_records",
@@ -2903,7 +2903,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Customer's Funding Accounts API is populated with the list funding accounts of a customer.",
+                        "description": "Response to Retrieve Customer's Bnak Accounts API is populated with the list bank accounts associated with a customer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -2921,7 +2921,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "customer_id": {
@@ -2950,7 +2950,7 @@
                                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                                 "minLength": 3,
                                                 "maxLength": 32,
-                                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                                "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                                 "example": "4124939999999990"
                                             },
                                             "currency_code3d": {
@@ -2966,7 +2966,7 @@
                                                     "checking",
                                                     "money_market"
                                                 ],
-                                                "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                                "description": "Account Sub Type indicates the sub type of a funding account.",
                                                 "example": "savings"
                                             },
                                             "account_holder_name": {
@@ -3036,7 +3036,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of bank accounts available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -3121,7 +3121,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -3181,7 +3181,7 @@
                     "Bank Account"
                 ],
                 "summary": "Get Customer's Bank Accounts Page",
-                "description": "This API is used to retrieve and display customer funding account information with pagination.",
+                "description": "This API is used to retrieve and display customer bank account information with pagination.",
                 "operationId": "Get Bank Accounts",
                 "parameters": [
                     {
@@ -3192,7 +3192,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "query_id",
@@ -3244,7 +3244,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Get Customer's Funding Accounts API is populated with the list funding accounts of a customer for the query.",
+                        "description": "Response to Get Customer's Funding Accounts API is populated with the list bank accounts associated with a customer for the query.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -3262,7 +3262,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "customer_id": {
@@ -3291,7 +3291,7 @@
                                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                                 "minLength": 3,
                                                 "maxLength": 32,
-                                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                                "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                                 "example": "4124939999999990"
                                             },
                                             "currency_code3d": {
@@ -3307,7 +3307,7 @@
                                                     "checking",
                                                     "money_market"
                                                 ],
-                                                "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                                "description": "Account Sub Type indicates the sub type of a funding account.",
                                                 "example": "savings"
                                             },
                                             "account_holder_name": {
@@ -3377,7 +3377,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of bank accounts available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -3462,7 +3462,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -3524,14 +3524,14 @@
                     "Bank Account"
                 ],
                 "summary": "Retrieve Bank Account Details",
-                "description": "This API is used to retrieve details of particular funding account associated with a customer.",
+                "description": "This API is used to retrieve details of particular bank account associated with a customer.",
                 "operationId": "getBankAccount",
                 "parameters": [
                     {
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -3565,12 +3565,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Funding Account Details API is populated with a funding Account details.",
+                        "description": "Response to Retrieve Funding Account Details API is populated with Bank Account details.",
                         "schema": {
                             "type": "object",
                             "required": [
@@ -3583,7 +3583,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -3612,7 +3612,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -3628,7 +3628,7 @@
                                         "checking",
                                         "money_market"
                                     ],
-                                    "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                    "description": "Account Sub Type indicates the sub type of a funding account.",
                                     "example": "savings"
                                 },
                                 "account_holder_name": {
@@ -3765,7 +3765,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -3825,13 +3825,13 @@
                     "Bank Account"
                 ],
                 "summary": "Update Bank Account",
-                "description": "The Update Customer API is used to edit the customer's personal details or the customer's status. Only the information being updated needs to be sent in the request, along with the id of the customer being updated.",
+                "description": "The Update Customer API is used to update the Bank Account details. Only the information being updated needs to be sent in the request, along with the id of the bank account being updated.",
                 "operationId": "updateBankAccount",
                 "parameters": [
                     {
                         "name": "bankAccount",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of bank account to be updated.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -3845,7 +3845,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -3874,7 +3874,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -3890,7 +3890,7 @@
                                         "checking",
                                         "money_market"
                                     ],
-                                    "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                    "description": "Account Sub Type indicates the sub type of a funding account.",
                                     "example": "savings"
                                 },
                                 "account_holder_name": {
@@ -3962,7 +3962,7 @@
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -3996,83 +3996,78 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Create Customer API is populated with the External Identifiers issued by OrbiPay-Checkout system for the customer and the account(s).",
+                        "description": "Response to Update Bank Account API is populated with the updated Bank Account Details as bank account object.",
                         "schema": {
                             "type": "object",
+                            "required": [
+                                "account_number",
+                                "currency_code3d"
+                            ],
                             "properties": {
                                 "id": {
+                                    "type": "string",
+                                    "pattern": "^[a-zA-Z0-9_]{0,50}$",
+                                    "minLength": 0,
+                                    "maxLength": 50,
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
+                                    "example": "act_exmaple5l595g5vm"
+                                },
+                                "customer_id": {
                                     "type": "string",
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
                                     "description": "Unique ID assigned by the Orbipay Wallet to the customer."
                                 },
-                                "first_name": {
+                                "aba_routing_number": {
                                     "type": "string",
-                                    "pattern": "[a-z0-9]{0,50}",
+                                    "minLength": 0,
+                                    "maxLength": 9,
+                                    "description": "ABA Routing Number is mandatory for Bank Accounts.",
+                                    "example": "031201360"
+                                },
+                                "account_issuing_institution_name": {
+                                    "type": "string",
+                                    "pattern": "^[a-zA-Z0-9,]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                                    "example": "TD BANK, NA"
                                 },
-                                "last_name": {
+                                "account_number": {
                                     "type": "string",
-                                    "pattern": "[a-z0-9]{0,50}",
+                                    "pattern": "^[a-zA-Z0-9]{3,32}$",
+                                    "minLength": 3,
+                                    "maxLength": 32,
+                                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
+                                    "example": "4124939999999990"
+                                },
+                                "currency_code3d": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z]{3}$",
+                                    "description": "3 character ISO currency code should be provided in currencyCode3d field default to USD.",
+                                    "example": "USD"
+                                },
+                                "account_subtype": {
+                                    "type": "string",
+                                    "enum": [
+                                        "savings",
+                                        "checking",
+                                        "money_market"
+                                    ],
+                                    "description": "Account Sub Type indicates the sub type of a funding account.",
+                                    "example": "savings"
+                                },
+                                "account_holder_name": {
+                                    "type": "string",
+                                    "pattern": "^[a-zA-Z0-9]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "This field contains the account holder’s last name, and will appear on all types of detail records."
-                                },
-                                "middle_name": {
-                                    "type": "string",
-                                    "pattern": "[a-z0-9]{0,50}",
-                                    "minLength": 0,
-                                    "maxLength": 50,
-                                    "description": "This field contains the account holder’s middle initial and will appear on all types of detail records."
-                                },
-                                "date_of_birth": {
-                                    "description": "Date of Birth.  ISO8601 full-date format, YYYY-MM-DD",
-                                    "allOf": [
-                                        {
-                                            "type": "string",
-                                            "format": "date",
-                                            "description": "ISO8601 full-date format, YYYY-MM-DD"
-                                        }
-                                    ]
-                                },
-                                "government_issued_id": {
-                                    "type": "string",
-                                    "pattern": "[a-z0-9]{0,50}",
-                                    "minLength": 0,
-                                    "maxLength": 50,
-                                    "description": "Provide SSN in case of Customers from US."
-                                },
-                                "email": {
-                                    "type": "string",
-                                    "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
-                                },
-                                "phone_number": {
-                                    "description": "Home phone number of the customer",
-                                    "allOf": [
-                                        {
-                                            "type": "string",
-                                            "minLength": 4,
-                                            "maxLength": 20,
-                                            "example": "(908) 791-2916"
-                                        }
-                                    ]
-                                },
-                                "social_account_id": {
-                                    "type": "string",
-                                    "description": "id provided by the social networking sites."
-                                },
-                                "register_login_id": {
-                                    "type": "string",
-                                    "description": "Email or phone number used for login."
+                                    "example": "Will Smith"
                                 },
                                 "address": {
                                     "type": "object",
@@ -4201,7 +4196,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4261,14 +4256,14 @@
                     "Bank Account"
                 ],
                 "summary": "Delete Bank Account",
-                "description": "The Delete Funding Account API is used to delete the funding account of a customer. All pending payments made with that account are cancelled upon deletion of the funding account.",
+                "description": "The Delete bank Account API is used to delete the bank account of a customer. All pending payments made with that account are cancelled upon deletion of the funding account.",
                 "operationId": "deleteBankAccount",
                 "parameters": [
                     {
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -4302,12 +4297,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Delete Funding Account API is populated with the deleted Funding Account.",
+                        "description": "Response to Delete Bnak Account API is populated with the boolean value true/false wrapped as DeleteBankAccount_Response object.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4316,11 +4311,11 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                                    "description": "Unique ID assigned by the Orbipay Wallet to the Bank."
                                 },
                                 "isDeleted": {
                                     "type": "boolean",
-                                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                                    "description": "Boolean value true/false determines bank is deleted or not."
                                 }
                             }
                         }
@@ -4394,7 +4389,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4456,7 +4451,7 @@
                     "Card"
                 ],
                 "summary": "Retrieve Customer's Cards",
-                "description": "This API is used to retrieve a list of funding accounts associated with a customer. The number of cards retrieved can be modified using the initial_records request parameter. The ID_CUSTOMER  is issued by OrbiPay Checkout system.",
+                "description": "This API is used to retrieve a list of Card accounts associated with a customer. The number of cards retrieved can be modified using the initial_records request parameter.  The ID_CUSTOMER  is issued by OrbiPay-Wallet .",
                 "operationId": "retrieveCards",
                 "parameters": [
                     {
@@ -4467,7 +4462,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "initial_records",
@@ -4501,7 +4496,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Customer's Cards API is populated with the list cards of a customer.",
+                        "description": "Response to Retrieve Customer's Cards API is populated with the list cards of associarted with a customer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4519,7 +4514,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "card_number": {
@@ -4527,7 +4522,7 @@
                                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                                 "minLength": 3,
                                                 "maxLength": 32,
-                                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                                "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                                 "example": "4124939999999990"
                                             },
                                             "currency_code3d": {
@@ -4633,7 +4628,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of cards available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -4718,7 +4713,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4778,7 +4773,7 @@
                     "Card"
                 ],
                 "summary": "Get Customer's Cards Page",
-                "description": "This API is used to retrieve and display customer card information with pagination.",
+                "description": "This API is used to retrieve and display customer cards information with pagination.",
                 "operationId": "Get Cards",
                 "parameters": [
                     {
@@ -4789,7 +4784,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "query_id",
@@ -4841,7 +4836,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Get Customer's Funding Accounts API is populated with the list funding accounts of a customer for the query.",
+                        "description": "Response to Get Customer's card page API is populated with the list cards of a customer for the query.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -4859,7 +4854,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "card_number": {
@@ -4867,7 +4862,7 @@
                                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                                 "minLength": 3,
                                                 "maxLength": 32,
-                                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                                "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                                 "example": "4124939999999990"
                                             },
                                             "currency_code3d": {
@@ -4973,7 +4968,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of cards available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -5058,7 +5053,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -5120,14 +5115,14 @@
                     "Card"
                 ],
                 "summary": "Retrieve Card Details",
-                "description": "This API is used to retrieve details of particular card associated with a customer.",
+                "description": "This API is used to retrieve details of particular card associated with a customer. The ID_ACCOUNT is issue by the OrbiPay-Wallet while adding the card.",
                 "operationId": "getCard",
                 "parameters": [
                     {
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -5161,12 +5156,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Card Details API is populated with a funding Account details.",
+                        "description": "Response to Retrieve Card Details API is populated with a card Account details.",
                         "schema": {
                             "type": "object",
                             "required": [
@@ -5179,7 +5174,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "card_number": {
@@ -5187,7 +5182,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -5360,7 +5355,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -5426,7 +5421,7 @@
                     {
                         "name": "card",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of cards to be updated.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -5440,7 +5435,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "card_number": {
@@ -5448,7 +5443,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -5556,7 +5551,7 @@
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -5590,12 +5585,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Update Card API response is populated with the updated card.",
+                        "description": "Response to Update Card API response is populated with the updated card details.",
                         "schema": {
                             "type": "object",
                             "required": [
@@ -5608,7 +5603,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "card_number": {
@@ -5616,7 +5611,7 @@
                                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                                     "minLength": 3,
                                     "maxLength": 32,
-                                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                     "example": "4124939999999990"
                                 },
                                 "currency_code3d": {
@@ -5789,7 +5784,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -5856,7 +5851,7 @@
                         "name": "ID_ACCOUNT",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -5890,12 +5885,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Delete Card API is populated with the deleted Funding Account.",
+                        "description": "Response to Delete Card API is populated with the boolean value and deleted card id wrapped in DeleteCard_Response.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -5904,11 +5899,11 @@
                                     "pattern": "[a-z0-9]{0,50}",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                                    "description": "Unique ID assigned by the Orbipay Wallet to the card."
                                 },
                                 "isDeleted": {
                                     "type": "boolean",
-                                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                                    "description": "Boolean value true/false determines card is deleted or not."
                                 }
                             }
                         }
@@ -5982,7 +5977,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6044,13 +6039,13 @@
                     "Transfer"
                 ],
                 "summary": "Transfer money",
-                "description": "The Transfer money API is used to transfer money between wallet to wallet or non-wallet.",
+                "description": "The Transfer money API is used to transfer money between wallet to  wallet or non-wallet.",
                 "operationId": "transferMoney",
                 "parameters": [
                     {
                         "name": "transfer",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of transfer to be made.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -6060,7 +6055,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the Transfer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "transfer_date": {
@@ -6103,7 +6098,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_customer_id": {
@@ -6111,7 +6106,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_name": {
@@ -6124,10 +6119,10 @@
                                 "receiver_email_id": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay wallet."
                                 },
                                 "receiver_phone_number": {
-                                    "description": "Home phone number of the customer",
+                                    "description": "Phone number of the customer",
                                     "allOf": [
                                         {
                                             "type": "string",
@@ -6144,7 +6139,7 @@
                                         "phone",
                                         "all"
                                     ],
-                                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                    "description": "email: reference link will be sent to reciever's email or phone.",
                                     "example": "phone"
                                 },
                                 "transfer_status": {
@@ -6188,12 +6183,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Transfer Money API is populated with the External Identifiers issued by OrbiPay-Wallet system for the Transfer.",
+                        "description": "Response to Transfer Money API is populated as Transfer object with the  Identifiers issued by  OrbiPay-Wallet  for the Transfer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6202,7 +6197,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the Transfer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "transfer_date": {
@@ -6245,7 +6240,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_customer_id": {
@@ -6253,7 +6248,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_name": {
@@ -6266,10 +6261,10 @@
                                 "receiver_email_id": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay wallet."
                                 },
                                 "receiver_phone_number": {
-                                    "description": "Home phone number of the customer",
+                                    "description": "Phone number of the customer",
                                     "allOf": [
                                         {
                                             "type": "string",
@@ -6286,7 +6281,7 @@
                                         "phone",
                                         "all"
                                     ],
-                                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                    "description": "email: reference link will be sent to reciever's email or phone.",
                                     "example": "phone"
                                 },
                                 "transfer_status": {
@@ -6371,7 +6366,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6433,14 +6428,14 @@
                     "Transfer"
                 ],
                 "summary": "Retrieve Transfer Details",
-                "description": "This API is used to retrieve details of particular transfer associated with a customer.",
+                "description": "This API is used to retrieve details of particular transfer associated  with a customer.",
                 "operationId": "getTransferDetails",
                 "parameters": [
                     {
                         "name": "ID_TRANSFER",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Transfer instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -6474,12 +6469,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Card Details API is populated with a funding Account details.",
+                        "description": "Response to Retrieve Card Details API is populated with a Transfer Object.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6488,7 +6483,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the Transfer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "transfer_date": {
@@ -6531,7 +6526,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_customer_id": {
@@ -6539,7 +6534,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_name": {
@@ -6552,10 +6547,10 @@
                                 "receiver_email_id": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay wallet."
                                 },
                                 "receiver_phone_number": {
-                                    "description": "Home phone number of the customer",
+                                    "description": "Phone number of the customer",
                                     "allOf": [
                                         {
                                             "type": "string",
@@ -6572,7 +6567,7 @@
                                         "phone",
                                         "all"
                                     ],
-                                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                    "description": "email: reference link will be sent to reciever's email or phone.",
                                     "example": "phone"
                                 },
                                 "transfer_status": {
@@ -6657,7 +6652,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6719,13 +6714,13 @@
                     "CashIn"
                 ],
                 "summary": "Cash In",
-                "description": "The Cash In API is used to load money in to the wallet of a cusotmer.",
-                "operationId": "cashIn",
+                "description": "The Cash In API is used to top-up the wallet of a cusotmer.",
+                "operationId": "CashIn",
                 "parameters": [
                     {
-                        "name": "transfer",
+                        "name": "CashIn",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of CashIn to be top up to the wallet.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -6735,7 +6730,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -6743,7 +6738,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet .",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "amount": {
@@ -6811,12 +6806,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Transfer Money API is populated with the External Identifiers issued by OrbiPay-Wallet system for the Transfer.",
+                        "description": "Response to Cash In API is populated as CashIn object with the Identifiers issued by OrbiPay-Wallet  for the CashIn.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -6825,7 +6820,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -6833,7 +6828,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet .",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "amount": {
@@ -6942,7 +6937,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7010,7 +7005,7 @@
                     {
                         "name": "cashout",
                         "in": "body",
-                        "description": "This JSON contains all the attributes of customer to be created.",
+                        "description": "This JSON contains all the attributes of CashOut to be made.",
                         "required": true,
                         "schema": {
                             "type": "object",
@@ -7020,7 +7015,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the CashOut in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -7028,7 +7023,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "amount": {
@@ -7096,12 +7091,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Transfer Money API is populated with the External Identifiers issued by OrbiPay-Wallet system for the Transfer.",
+                        "description": "Response to CashOut API is populated as CashOut object with the Identifiers issued by OrbiPay-Wallet  for the cashout.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7110,7 +7105,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the CashOut in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "customer_id": {
@@ -7118,7 +7113,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "amount": {
@@ -7227,7 +7222,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7289,7 +7284,7 @@
                     "Transaction"
                 ],
                 "summary": "Retrieve Customer's Transaction",
-                "description": "This API is used to retrieve a list of funding accounts associated with a customer. The number of cards retrieved can be modified using the initial_records request parameter. The ID_CUSTOMER  is issued by OrbiPay Checkout system.",
+                "description": "This API is used to retrieve a list of transactions associated with a customer. The number of transactions retrieved can be modified using the initial_records request parameter. The ID_CUSTOMER  is issued by OrbiPay-Wallet.",
                 "operationId": "retrieveTransactions",
                 "parameters": [
                     {
@@ -7300,7 +7295,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "initial_records",
@@ -7339,12 +7334,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Customer's Cards API is populated with the list cards of a customer.",
+                        "description": "Response to Retrieve transactions API is populated with the list of transactions of a customer.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7358,7 +7353,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the Transaction in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "transaction_type": {
@@ -7368,7 +7363,7 @@
                                                     "cashOut",
                                                     "transfer"
                                                 ],
-                                                "description": "cashIn: load money in to the wallet cashIn: unaloda money from the wallet transfer: tranfer money from wallet to wallet or non-wallet",
+                                                "description": "cashIn: load money in to the wallet cashIn. CashOut: unload money from the wallet. wallet transfer: tranfer money from wallet to wallet or non-wallet",
                                                 "example": "transfer"
                                             },
                                             "transaction_subtype": {
@@ -7427,7 +7422,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "receiver_customer_id": {
@@ -7435,7 +7430,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "receiver_name": {
@@ -7448,10 +7443,10 @@
                                             "receiver_email_id": {
                                                 "type": "string",
                                                 "format": "email",
-                                                "description": "This field contains the customer’s email address within the OrbiPay System."
+                                                "description": "This field contains the customer’s email address within the OrbiPay Wallet."
                                             },
                                             "receiver_phone_number": {
-                                                "description": "Home phone number of the customer",
+                                                "description": "phone number of the customer",
                                                 "allOf": [
                                                     {
                                                         "type": "string",
@@ -7468,7 +7463,7 @@
                                                     "phone",
                                                     "all"
                                                 ],
-                                                "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                                "description": "email: reference link will be sent to reciever's email or phone",
                                                 "example": "phone"
                                             },
                                             "transfer_status": {
@@ -7486,7 +7481,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of Transactions available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -7571,7 +7566,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7631,7 +7626,7 @@
                     "Transaction"
                 ],
                 "summary": "Get Customer's Transaction Page",
-                "description": "This API is used to retrieve and display customer card information with pagination.",
+                "description": "This API is used to retrieve list of Transactions with pagination.",
                 "operationId": "getTransactions",
                 "parameters": [
                     {
@@ -7642,7 +7637,7 @@
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Id of the customer issued by orbipay system."
+                        "description": "Id of the customer instance issued by orbipay wallet."
                     },
                     {
                         "name": "query_id",
@@ -7699,12 +7694,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Get Customer's Funding Accounts API is populated with the list funding accounts of a customer for the query.",
+                        "description": "Response to Get Transactions API is populated with the list Tarnsactions of a customer for the query.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7718,7 +7713,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the Transaction in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "transaction_type": {
@@ -7728,7 +7723,7 @@
                                                     "cashOut",
                                                     "transfer"
                                                 ],
-                                                "description": "cashIn: load money in to the wallet cashIn: unaloda money from the wallet transfer: tranfer money from wallet to wallet or non-wallet",
+                                                "description": "cashIn: load money in to the wallet cashIn. CashOut: unload money from the wallet. wallet transfer: tranfer money from wallet to wallet or non-wallet",
                                                 "example": "transfer"
                                             },
                                             "transaction_subtype": {
@@ -7787,7 +7782,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "receiver_customer_id": {
@@ -7795,7 +7790,7 @@
                                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                                 "minLength": 0,
                                                 "maxLength": 50,
-                                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                                 "example": "act_exmaple5l595g5vm"
                                             },
                                             "receiver_name": {
@@ -7808,10 +7803,10 @@
                                             "receiver_email_id": {
                                                 "type": "string",
                                                 "format": "email",
-                                                "description": "This field contains the customer’s email address within the OrbiPay System."
+                                                "description": "This field contains the customer’s email address within the OrbiPay Wallet."
                                             },
                                             "receiver_phone_number": {
-                                                "description": "Home phone number of the customer",
+                                                "description": "phone number of the customer",
                                                 "allOf": [
                                                     {
                                                         "type": "string",
@@ -7828,7 +7823,7 @@
                                                     "phone",
                                                     "all"
                                                 ],
-                                                "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                                "description": "email: reference link will be sent to reciever's email or phone",
                                                 "example": "phone"
                                             },
                                             "transfer_status": {
@@ -7846,7 +7841,7 @@
                                 },
                                 "total_results_count": {
                                     "type": "number",
-                                    "description": "total number of customers available with matching criteria",
+                                    "description": "total number of Transactions available with matching criteria",
                                     "example": "100"
                                 },
                                 "has_more_results": {
@@ -7931,7 +7926,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -7993,14 +7988,14 @@
                     "Transaction"
                 ],
                 "summary": "Retrieve Transaction Details",
-                "description": "This API is used to retrieve details of particular card associated with a customer.",
+                "description": "This API is used to retrieve details of particular Transactions associated with a customer.",
                 "operationId": "getTransaction",
                 "parameters": [
                     {
                         "name": "ID_TRANSACTION",
                         "in": "path",
                         "required": true,
-                        "description": "Id of the Funding/Customer Account issued by orbipay system.",
+                        "description": "Id of the Transactions instance issued by orbipay wallet.",
                         "type": "string",
                         "pattern": "[a-z0-9]{0,50}",
                         "minLength": 0,
@@ -8034,12 +8029,12 @@
                         "pattern": "^[a-zA-Z0-9]{0,50}$",
                         "minLength": 0,
                         "maxLength": 50,
-                        "description": "Unique partner Identifier, for example  cli_example5852kw555"
+                        "description": "Unique customer Identifier, for example  cus_example5852kw555"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Response to Retrieve Card Details API is populated with a funding Account details.",
+                        "description": "Response to Retrieve Transactions Details API is populated with a particular Transactins.",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -8048,7 +8043,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the Transaction in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "transaction_type": {
@@ -8058,7 +8053,7 @@
                                         "cashOut",
                                         "transfer"
                                     ],
-                                    "description": "cashIn: load money in to the wallet cashIn: unaloda money from the wallet transfer: tranfer money from wallet to wallet or non-wallet",
+                                    "description": "cashIn: load money in to the wallet cashIn. CashOut: unload money from the wallet. wallet transfer: tranfer money from wallet to wallet or non-wallet",
                                     "example": "transfer"
                                 },
                                 "transaction_subtype": {
@@ -8117,7 +8112,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_customer_id": {
@@ -8125,7 +8120,7 @@
                                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                     "minLength": 0,
                                     "maxLength": 50,
-                                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                     "example": "act_exmaple5l595g5vm"
                                 },
                                 "receiver_name": {
@@ -8138,10 +8133,10 @@
                                 "receiver_email_id": {
                                     "type": "string",
                                     "format": "email",
-                                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                                    "description": "This field contains the customer’s email address within the OrbiPay Wallet."
                                 },
                                 "receiver_phone_number": {
-                                    "description": "Home phone number of the customer",
+                                    "description": "phone number of the customer",
                                     "allOf": [
                                         {
                                             "type": "string",
@@ -8158,7 +8153,7 @@
                                         "phone",
                                         "all"
                                     ],
-                                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                    "description": "email: reference link will be sent to reciever's email or phone",
                                     "example": "phone"
                                 },
                                 "transfer_status": {
@@ -8243,7 +8238,7 @@
                         "description": "The requested resource doesn't exist."
                     },
                     "500": {
-                        "description": "Something went wrong at the Orbipay-Checkout Server",
+                        "description": "Something went wrong at the Orbipay-Wallet Server",
                         "schema": {
                             "type": "object",
                             "properties": {
@@ -8329,7 +8324,7 @@
             "pattern": "^[a-zA-Z0-9]{0,50}$",
             "minLength": 0,
             "maxLength": 50,
-            "description": "Unique partner Identifier, for example  cli_example5852kw555"
+            "description": "Unique customer Identifier, for example  cus_example5852kw555"
         },
         "Path_IdOfCustomer": {
             "name": "ID_CUSTOMER",
@@ -8339,7 +8334,7 @@
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
             "maxLength": 50,
-            "description": "Id of the customer issued by orbipay system."
+            "description": "Id of the customer instance issued by orbipay wallet."
         },
         "Path_IdOfWallet": {
             "name": "ID_WALLET",
@@ -8349,13 +8344,13 @@
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
             "maxLength": 50,
-            "description": "Id of the wallet issued by orbipay system."
+            "description": "Id of the wallet instance issued by orbipay wallet."
         },
         "Path_IdOfAccount": {
             "name": "ID_ACCOUNT",
             "in": "path",
             "required": true,
-            "description": "Id of the Funding/Customer Account issued by orbipay system.",
+            "description": "Id of the Bank/Card/Customer instance issued by orbipay wallet.",
             "type": "string",
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
@@ -8365,7 +8360,7 @@
             "name": "ID_TRANSFER",
             "in": "path",
             "required": true,
-            "description": "Id of the Funding/Customer Account issued by orbipay system.",
+            "description": "Id of the Transfer instance issued by orbipay wallet.",
             "type": "string",
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
@@ -8375,7 +8370,7 @@
             "name": "ID_TRANSACTION",
             "in": "path",
             "required": true,
-            "description": "Id of the Funding/Customer Account issued by orbipay system.",
+            "description": "Id of the Transactions instance issued by orbipay wallet.",
             "type": "string",
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
@@ -8385,7 +8380,7 @@
             "name": "ID_PAYMENT",
             "in": "path",
             "required": true,
-            "description": "Id of the Payment instance,issued by orbipay system",
+            "description": "Id of the Payment instance,issued by orbipay wallet",
             "type": "string",
             "pattern": "[a-z0-9]{0,50}",
             "minLength": 0,
@@ -8507,11 +8502,11 @@
                     "pattern": "[a-z0-9]{0,50}",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                    "description": "Unique ID assigned by the Orbipay Wallet to the card."
                 },
                 "isDeleted": {
                     "type": "boolean",
-                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                    "description": "Boolean value true/false determines card is deleted or not."
                 }
             }
         },
@@ -8523,11 +8518,11 @@
                     "pattern": "[a-z0-9]{0,50}",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                    "description": "Unique ID assigned by the Orbipay Wallet to the Bank."
                 },
                 "isDeleted": {
                     "type": "boolean",
-                    "description": "Unique ID assigned by the Orbipay Wallet to the customer."
+                    "description": "Boolean value true/false determines bank is deleted or not."
                 }
             }
         },
@@ -8623,7 +8618,7 @@
                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                 "minLength": 0,
                                 "maxLength": 50,
-                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                 "example": "act_exmaple5l595g5vm"
                             },
                             "customer_id": {
@@ -8652,7 +8647,7 @@
                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                 "minLength": 3,
                                 "maxLength": 32,
-                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                 "example": "4124939999999990"
                             },
                             "currency_code3d": {
@@ -8668,7 +8663,7 @@
                                     "checking",
                                     "money_market"
                                 ],
-                                "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                                "description": "Account Sub Type indicates the sub type of a funding account.",
                                 "example": "savings"
                             },
                             "account_holder_name": {
@@ -8738,7 +8733,7 @@
                 },
                 "total_results_count": {
                     "type": "number",
-                    "description": "total number of customers available with matching criteria",
+                    "description": "total number of bank accounts available with matching criteria",
                     "example": "100"
                 },
                 "has_more_results": {
@@ -8770,7 +8765,7 @@
                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                 "minLength": 0,
                                 "maxLength": 50,
-                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                                 "example": "act_exmaple5l595g5vm"
                             },
                             "card_number": {
@@ -8778,7 +8773,7 @@
                                 "pattern": "^[a-zA-Z0-9]{3,32}$",
                                 "minLength": 3,
                                 "maxLength": 32,
-                                "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                                "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                                 "example": "4124939999999990"
                             },
                             "currency_code3d": {
@@ -8884,7 +8879,7 @@
                 },
                 "total_results_count": {
                     "type": "number",
-                    "description": "total number of customers available with matching criteria",
+                    "description": "total number of cards available with matching criteria",
                     "example": "100"
                 },
                 "has_more_results": {
@@ -8912,7 +8907,7 @@
                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                 "minLength": 0,
                                 "maxLength": 50,
-                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                "description": "Id is a unique identifier assigned to the Transaction in OrbiPay-Wallet.",
                                 "example": "act_exmaple5l595g5vm"
                             },
                             "transaction_type": {
@@ -8922,7 +8917,7 @@
                                     "cashOut",
                                     "transfer"
                                 ],
-                                "description": "cashIn: load money in to the wallet cashIn: unaloda money from the wallet transfer: tranfer money from wallet to wallet or non-wallet",
+                                "description": "cashIn: load money in to the wallet cashIn. CashOut: unload money from the wallet. wallet transfer: tranfer money from wallet to wallet or non-wallet",
                                 "example": "transfer"
                             },
                             "transaction_subtype": {
@@ -8981,7 +8976,7 @@
                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                 "minLength": 0,
                                 "maxLength": 50,
-                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                 "example": "act_exmaple5l595g5vm"
                             },
                             "receiver_customer_id": {
@@ -8989,7 +8984,7 @@
                                 "pattern": "^[a-zA-Z0-9_]{0,50}$",
                                 "minLength": 0,
                                 "maxLength": 50,
-                                "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                                "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                                 "example": "act_exmaple5l595g5vm"
                             },
                             "receiver_name": {
@@ -9002,10 +8997,10 @@
                             "receiver_email_id": {
                                 "type": "string",
                                 "format": "email",
-                                "description": "This field contains the customer’s email address within the OrbiPay System."
+                                "description": "This field contains the customer’s email address within the OrbiPay Wallet."
                             },
                             "receiver_phone_number": {
-                                "description": "Home phone number of the customer",
+                                "description": "phone number of the customer",
                                 "allOf": [
                                     {
                                         "type": "string",
@@ -9022,7 +9017,7 @@
                                     "phone",
                                     "all"
                                 ],
-                                "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                                "description": "email: reference link will be sent to reciever's email or phone",
                                 "example": "phone"
                             },
                             "transfer_status": {
@@ -9040,7 +9035,7 @@
                 },
                 "total_results_count": {
                     "type": "number",
-                    "description": "total number of customers available with matching criteria",
+                    "description": "total number of Transactions available with matching criteria",
                     "example": "100"
                 },
                 "has_more_results": {
@@ -9070,7 +9065,7 @@
                     "pattern": "[a-z0-9]{0,50}",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "This field contains account holder’s first name and will be sent on all types of detail records."
+                    "description": " This field contains account holder’s first name and will be sent on all types of detail records."
                 },
                 "last_name": {
                     "type": "string",
@@ -9106,7 +9101,7 @@
                 "email": {
                     "type": "string",
                     "format": "email",
-                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                    "description": "This field contains the customer’s email address within the OrbiPay  walllet."
                 },
                 "phone_number": {
                     "description": "Home phone number of the customer",
@@ -9196,7 +9191,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "card_number": {
@@ -9204,7 +9199,7 @@
                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                     "minLength": 3,
                     "maxLength": 32,
-                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                    "description": "card Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                     "example": "4124939999999990"
                 },
                 "currency_code3d": {
@@ -9319,7 +9314,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the account in OrbiPay-wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "customer_id": {
@@ -9348,7 +9343,7 @@
                     "pattern": "^[a-zA-Z0-9]{3,32}$",
                     "minLength": 3,
                     "maxLength": 32,
-                    "description": "Account Number field is expected to be a unique field for the accounts in partner system.",
+                    "description": "Account Number field is expected to be a unique field for the accounts in OrbiPay-Wallet.",
                     "example": "4124939999999990"
                 },
                 "currency_code3d": {
@@ -9364,7 +9359,7 @@
                         "checking",
                         "money_market"
                     ],
-                    "description": "'Account Sub Type indicates the sub type of a funding account.'",
+                    "description": "Account Sub Type indicates the sub type of a funding account.",
                     "example": "savings"
                 },
                 "account_holder_name": {
@@ -9439,7 +9434,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "customer_id": {
@@ -9447,7 +9442,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet .",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "amount": {
@@ -9494,7 +9489,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the CashOut in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "customer_id": {
@@ -9502,7 +9497,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "amount": {
@@ -9549,7 +9544,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the Transfer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "transfer_date": {
@@ -9592,7 +9587,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "receiver_customer_id": {
@@ -9600,7 +9595,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "receiver_name": {
@@ -9613,10 +9608,10 @@
                 "receiver_email_id": {
                     "type": "string",
                     "format": "email",
-                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                    "description": "This field contains the customer’s email address within the OrbiPay wallet."
                 },
                 "receiver_phone_number": {
-                    "description": "Home phone number of the customer",
+                    "description": "Phone number of the customer",
                     "allOf": [
                         {
                             "type": "string",
@@ -9633,7 +9628,7 @@
                         "phone",
                         "all"
                     ],
-                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                    "description": "email: reference link will be sent to reciever's email or phone.",
                     "example": "phone"
                 },
                 "transfer_status": {
@@ -9656,7 +9651,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the Transaction in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "transaction_type": {
@@ -9666,7 +9661,7 @@
                         "cashOut",
                         "transfer"
                     ],
-                    "description": "cashIn: load money in to the wallet cashIn: unaloda money from the wallet transfer: tranfer money from wallet to wallet or non-wallet",
+                    "description": "cashIn: load money in to the wallet cashIn. CashOut: unload money from the wallet. wallet transfer: tranfer money from wallet to wallet or non-wallet",
                     "example": "transfer"
                 },
                 "transaction_subtype": {
@@ -9725,7 +9720,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "receiver_customer_id": {
@@ -9733,7 +9728,7 @@
                     "pattern": "^[a-zA-Z0-9_]{0,50}$",
                     "minLength": 0,
                     "maxLength": 50,
-                    "description": "Id is a unique identifier assigned to the account in OrbiPay-Checkout system.",
+                    "description": "Id is a unique identifier assigned to the customer in OrbiPay-Wallet.",
                     "example": "act_exmaple5l595g5vm"
                 },
                 "receiver_name": {
@@ -9746,10 +9741,10 @@
                 "receiver_email_id": {
                     "type": "string",
                     "format": "email",
-                    "description": "This field contains the customer’s email address within the OrbiPay System."
+                    "description": "This field contains the customer’s email address within the OrbiPay Wallet."
                 },
                 "receiver_phone_number": {
-                    "description": "Home phone number of the customer",
+                    "description": "phone number of the customer",
                     "allOf": [
                         {
                             "type": "string",
@@ -9766,7 +9761,7 @@
                         "phone",
                         "all"
                     ],
-                    "description": "email: reference link will be sent to reciever's email phone: reference link will be sent to reciever's phone all: reference link will be sent to reciever's email and phone",
+                    "description": "email: reference link will be sent to reciever's email or phone",
                     "example": "phone"
                 },
                 "transfer_status": {
@@ -9857,7 +9852,7 @@
             "description": "The requested resource doesn't exist."
         },
         "Response_500": {
-            "description": "Something went wrong at the Orbipay-Checkout Server",
+            "description": "Something went wrong at the Orbipay-Wallet Server",
             "schema": {
                 "type": "object",
                 "properties": {
