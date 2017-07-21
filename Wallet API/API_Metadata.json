@@ -35,7 +35,14 @@
             "sample_type": "md2html"
         }
     ],
-    "API_Objects": [],
+    "API_Objects": [
+        {
+            "tag": "Customer",
+            "name": "Customer Object",
+            "reference": "customer",
+            "description": "Based on the merchant’s preference, a customer can be uniquely identified by the customer_id or email attributes on Customer Object.\r\nThis section outlines the APIs required to exchange and manage customer information, such as create customer."
+        }
+    ],
     "Code_Samples": [],
     "Object_Models": []
 }
