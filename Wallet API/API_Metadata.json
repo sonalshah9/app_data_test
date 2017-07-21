@@ -40,7 +40,49 @@
             "tag": "Customer",
             "name": "Customer Object",
             "reference": "customer",
-            "description": "Based on the merchant’s preference, a customer can be uniquely identified by the customer_id or email attributes on Customer Object.\r\nThis section outlines the APIs required to exchange and manage customer information, such as create customer."
+            "description": "A customer can be uniquely identified by the customer_id which is a Unique ID assigned by the Orbipay Wallet to the customer."
+        },
+        {
+            "tag": "Bank Account",
+            "name": "Bank Account Object",
+            "reference": "Bank_Account",
+            "description": "A  bank account is needed to unload money from Orbipay Wallet into the bank account."
+        },
+        {
+            "tag": "Card",
+            "name": "Card Object",
+            "reference": "Card",
+            "description": "A card is needed to load money from associated acount into the Orbipay Wallet to recharge it."
+        },
+        {
+            "tag": "Wallet",
+            "name": "Wallet Object",
+            "reference": "wallet",
+            "description": "A Wallet allows customer to make online transactions and make payments using mobile phone. Customer can use his card to recharge wallet. Also, he can link his bank account to unload money from wallet into his account.\r\n\r\nEach wallet has a unique ID associated with it  issued by Orbipay system."
+        },
+        {
+            "tag": "Transfer",
+            "name": "Transfer Object",
+            "reference": "Transfer",
+            "description": "Transfer of money can be from wallet to wallet or wallet to bank account."
+        },
+        {
+            "tag": "CashIn",
+            "name": "CashIn Object",
+            "reference": "CashIn",
+            "description": "The Cash In is to load money into the Orbipay Wallet of the customer from his bank account through card.."
+        },
+        {
+            "tag": "CashOut",
+            "name": "CashOut Object",
+            "reference": "CashOut",
+            "description": "The Cash Out is to unload money into the bank account of the customer from his Orbipay Wallet."
+        },
+        {
+            "tag": "Transaction",
+            "name": "Transaction Object",
+            "reference": "Transaction",
+            "description": "All transactions associated with the customer comes under this object. A single transaction is identified uniquely by Transaction_id."
         }
     ],
     "Code_Samples": [],
