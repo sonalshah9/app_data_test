@@ -1,0 +1,24 @@
+{
+    "Checkout": {
+        "api_name": "Checkout API",
+        "common_request_headers": "true",
+        "common_response_headers": "true",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
+    },
+    "Orbipay": {
+        "api_name": "Orbipay API",
+        "common_request_headers": "false",
+        "common_response_headers": "false",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
+    }
+}
