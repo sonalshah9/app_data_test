@@ -1,0 +1,9 @@
+{
+    "Introduction": {
+        "description": "\r\nThe OrbiPay Wallet API is a type of electronic P2P payment service which provide a fast and conveniet way through which individuals can send and receive money via their mobile devices. There is no need to know the bank information of a person to send money to them. All you need to know is their email address or phone number. "
+    },
+    "Topics": [],
+    "API_Objects": [],
+    "Code_Samples": [],
+    "Object_Models": []
+}
