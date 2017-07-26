@@ -1,0 +1,92 @@
+{
+    "test1": {
+        "api_name": "api",
+        "common_request_headers": "false",
+        "common_response_headers": "false",
+        "authentication_banner": "true",
+        "languages_supported": [
+            {
+                "java": "Java"
+            },
+            {
+                "python": "Python"
+            },
+            {
+                "shell": "Shell"
+            }
+        ]
+    },
+    "test2": {
+        "api_name": "api",
+        "common_request_headers": "false",
+        "common_response_headers": "true",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
+    },
+    "test3": {
+        "api_name": "api",
+        "common_request_headers": "false",
+        "common_response_headers": "false",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            }
+        ]
+    },
+    "test5": {
+        "api_name": "api",
+        "common_request_headers": "true",
+        "common_response_headers": "true",
+        "authentication_banner": "true",
+        "languages_supported": [
+            {
+                "java": "Java"
+            },
+            {
+                "php": "PHP"
+            }
+        ]
+    },
+    "test6": {
+        "api_name": "api",
+        "common_request_headers": "true",
+        "common_response_headers": "true",
+        "authentication_banner": "false",
+        "languages_supported": [
+            {
+                "java": "Java"
+            },
+            {
+                "python": "Python"
+            },
+            {
+                "php": "PHP"
+            },
+            {
+                "javascript": "Javascript"
+            }
+        ]
+    },
+    "test7": {
+        "api_name": "api",
+        "common_request_headers": "false",
+        "common_response_headers": "true",
+        "authentication_banner": "true",
+        "languages_supported": [
+            {
+                "java": "Java"
+            },
+            {
+                "shell": "Shell"
+            },
+            {
+                "php": "PHP"
+            }
+        ]
+    }
+}
