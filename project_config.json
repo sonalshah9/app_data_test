@@ -14,7 +14,7 @@
         "api_name": "Orbipay Wallet API",
         "common_request_headers": "false",
         "common_response_headers": "false",
-        "authentication_banner": "false",
+        "authentication_banner": "true",
         "languages_supported": [
             {
                 "java": "Java"
