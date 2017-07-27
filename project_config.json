@@ -33,7 +33,7 @@
         ]
     },
     "new": {
-        "api_name": "5",
+        "api_name": "7",
         "common_request_headers": "false",
         "common_response_headers": "false",
         "authentication_banner": "false",
