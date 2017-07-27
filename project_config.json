@@ -42,16 +42,5 @@
                 "java": "Java"
             }
         ]
-    },
-    "new Sai": {
-        "api_name": "api",
-        "common_request_headers": "false",
-        "common_response_headers": "false",
-        "authentication_banner": "true",
-        "languages_supported": [
-            {
-                "java": "Java"
-            }
-        ]
     }
 }
