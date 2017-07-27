@@ -1,7 +1,7 @@
 {
     "Checkout": {
-        "api_name": "Checkout API",
-        "common_request_headers": "true",
+        "api_name": "Checkout123 API",
+        "common_request_headers": "false",
         "common_response_headers": "true",
         "authentication_banner": "false",
         "languages_supported": [
@@ -11,7 +11,7 @@
         ]
     },
     "Wallet API": {
-        "api_name": "Orbipay Wallet API",
+        "api_name": "Orbipay Wallet123 API",
         "common_request_headers": "false",
         "common_response_headers": "false",
         "authentication_banner": "true",
