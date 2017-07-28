@@ -33,7 +33,7 @@
         ]
     },
     "new": {
-        "api_name": "sai",
+        "api_name": "abcd",
         "common_request_headers": "false",
         "common_response_headers": "false",
         "authentication_banner": "false",
